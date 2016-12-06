@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 숙소 목록
+    
+    table.table.table-bordered
+      thead
+        tr 
+          th 호스트
+          th 제목
+          th 날짜
+          th 조회수
+          th
+      tbody
+        each host in hosts
+          tr
+            td
+             // a(href='/users/#{user._id}')= user.name
+            td
+              a(href='/hosts/#{host.id}')= host.title
+            td= moment(host.createdAt).format('YYYY-MM-DD')
+            td= host.read
+            td
+              a.btn.btn-xs.btn-default(href='/hosts/#{host.id}/edit') 수정
+              | 
+              a.btn.btn-xs.btn-default(data-id=host.id, class='delete') 삭제
+
+    a.btn.btn-primary(href='/hosts/new') 글쓰기
+
+    form#deleteForm(style='display:none', method="POST")
+            
+    script(type='text/javascript').
+      $(".delete").click(function(e) {
+        var id = $(e.currentTarget).data('id');
+        if (confirm('정말 삭제하시겠습니까?')) {
+          $("#deleteForm").attr('action', "/hosts/" + id + "?_method=DELETE").submit();          
+        }
+        return false;
+      });
