@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    
+    h1.page-header 숙소 예약
+
+    form(action = (book.id) ? "/books/#{book.id}?_method=PUT" : "/books", method='POST')
+      .form-group
+        label(for='person') 숙박인원 
+        input.form-control(type='person', id='person', name='person', placeholder='숙박인원')
+      .form-group
+        label(for='check_in') 체크인날짜 
+        input.form-control(type='check_in', id='check_in', name='check_in', placeholder='예)2016-12-06')
+      .form-group
+        label(for='check_out') 체크아웃날짜 
+        input.form-control(type='check_out', id='check_out', name='check_out', placeholder='예)2016-12-16')
+      .form-group
+        label(for='introduce') 제목
+        textarea.form-control(type='introduce', id='introduce', name='introduce', placeholder='간단한 소개')
+
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit') 예약 요청
+      

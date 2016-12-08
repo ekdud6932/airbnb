@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 숙소 목록
+    
+    .form-group
+        label(for='city') 도시명 
+        input.form-control(type='city', id='city', name='city', placeholder='도시명')
+        a.btn.btn-primary 검색
+
+    table.table.table-bordered
+      thead
+        tr 
+          th 도시명
+          th 제목
+          th 요금
+          th 호스트
+          th 조회수
+          th
+      tbody
+        each host in hosts
+          tr
+            td= host.city
+            td
+              a(href='/hosts/#{host.id}')= host.title
+            td= host.charge
+            td
+              //호스트 이름
+            td= host.read
+            td
+              a.btn.btn-xs.btn-default(href='/books/new') 예약
+             
