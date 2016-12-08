@@ -4,11 +4,18 @@ block content
   .container
     h1.page-header= host.title
     p
-      b by #{host.city}
+      b  #{host.title}
       | 
       span at #{moment(host.createdAt).format('YYYY-MM-DD')} 
       | 
       | (조회수 #{host.read})
+    p.well(style='white-space:pre;')=  host.title
+    p.well(style='white-space:pre;')= host.city
+    p.well(style='white-space:pre;')= host.address
     p.well(style='white-space:pre;')= host.content
-    
+    p.well(style='white-space:pre;')= host.facility
+    p.well(style='white-space:pre;')= host.rule
+    p.well(style='white-space:pre;')= host.charge
+
+
     a.btn.btn-default(href='/hosts') 목록

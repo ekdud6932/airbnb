@@ -13,25 +13,25 @@ block content
         input.form-control(type='password', id='password', name='password', placeholder='Password')
       .form-group
         label(for='city') 도시 
-        input.form-control(type='city', id='city', name='city', placeholder='도시명')
+        input.form-control(type='city', id='city', name='city', placeholder='도시명')= host.city
       .form-group
         label(for='address') 정확한 주소 
-        input.form-control(type='address', id='address', name='address', placeholder='정확한 주소를 입력해주세요')
+        input.form-control(type='address', id='address', name='address', placeholder='정확한 주소를 입력해주세요')= host.address
       .form-group
         label(for='title') 제목
-        input.form-control(type='text', id='title', name='title', placeholder='제목', value=host.title)
+        input.form-control(type='text', id='title', name='title', placeholder='제목', value=host.title)= host.title
       .form-group
         label(for='content') 간단한 설명
-        textarea.form-control(id='content', rows='8', name='content', placeholder='간단한 설명')= host.content
+        textarea.form-control(id='content', name='content', placeholder='간단한 설명')= host.content
         .form-group
         label(for='facility') 편의시설 
-        textarea.form-control(type='facility', rows='10', id='facility', name='facility', placeholder='어떤 편의시설을 제공하나요')
+        textarea.form-control(type='facility', id='facility', name='facility', placeholder='어떤 편의시설을 제공하나요')= host.facility
         .form-group
         label(for='rule') 이용규칙 
-        textarea.form-control(type='rule', rows='10', id='rule', name='rule', placeholder='이용규칙은 무엇인가요')
+        textarea.form-control(type='rule', id='rule', name='rule', placeholder='이용규칙은 무엇인가요')= host.rule
         .form-group
         label(for='charge') 이용요금(1박기준)
-        input.form-control(type='charge', id='charge', name='charge', placeholder='이용요금')
+        input.form-control(type='charge', id='charge', name='charge', placeholder='이용요금')= host.charge
       
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 

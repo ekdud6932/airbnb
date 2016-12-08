@@ -12,6 +12,7 @@ var schema = new Schema({
     rule: {type: String},
     createdAt: {type: Date, default: Date.now},
     read: {type: Number, default: 0}
+    // User_name: {type: String, required: true, trim: true}
 }, {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}

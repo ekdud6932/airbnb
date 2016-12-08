@@ -16,7 +16,7 @@ block content
         each host in hosts
           tr
             td
-             // a(href='/users/#{user._id}')= user.name
+              //a(href='/users/#{user.id}')= user.name
             td
               a(href='/hosts/#{host.id}')= host.title
             td= moment(host.createdAt).format('YYYY-MM-DD')
@@ -26,7 +26,7 @@ block content
               | 
               a.btn.btn-xs.btn-default(data-id=host.id, class='delete') 삭제
 
-    a.btn.btn-primary(href='/hosts/new') 글쓰기
+    a.btn.btn-primary(href='/hosts/new') 숙소등록
 
     form#deleteForm(style='display:none', method="POST")
             
