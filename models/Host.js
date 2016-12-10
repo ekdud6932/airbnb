@@ -11,8 +11,9 @@ var schema = new Schema({
     facility: {type: String},
     rule: {type: String},
     createdAt: {type: Date, default: Date.now},
-    read: {type: Number, default: 0}
-    // User_name: {type: String, required: true, trim: true}
+    read: {type: Number, default: 0},
+    user: {type: Schema.Types.ObjectId, index: true},
+    userName: {type: String}
 }, {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}

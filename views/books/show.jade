@@ -4,11 +4,11 @@ block content
   .container
     h1.page-header= host.title
     p
-      b by #{host.city}
+      b by #{host.userName}
       | 
       span at #{moment(host.createdAt).format('YYYY-MM-DD')} 
       | 
       | (조회수 #{host.read})
     p.well(style='white-space:pre;')= host.content
     
-    a.btn.btn-default(href='/hosts') 목록
+    a.btn.btn-default(href='/books') 예약

@@ -15,8 +15,8 @@ block content
       tbody
         each host in hosts
           tr
-            td
-              //a(href='/users/#{user.id}')= user.name
+            td 
+              | #{host.userName}
             td
               a(href='/hosts/#{host.id}')= host.title
             td= moment(host.createdAt).format('YYYY-MM-DD')

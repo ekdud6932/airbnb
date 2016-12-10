@@ -21,6 +21,17 @@ router.get('/', needAuth, function(req, res, next) {
   });
 });
 
+router.get('/search',function(req, res,nest){
+  console.log(req.query.city);
+  Host.find({city: req.query.city}, function(err,result){
+    if (err){
+      return next(err);
+    }
+    console.log(result);
+    res.render('books/search',{hosts: result});
+  });
+});
+
 router.get('/new', function(req, res, next) {
     res.render('books/edit', {book : {}});
 });

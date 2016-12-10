@@ -6,7 +6,9 @@ var schema = new Schema({
     check_in: {type: String},
     check_out: {type: String},
     introduce: {type: String},
-    bookedAt: {type: Date, default: Date.now}
+    bookedAt: {type: Date, default: Date.now},
+    user: {type: Schema.Types.ObjectId, index: true},
+    userName: {type: String}
 }, {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}
