@@ -21,7 +21,7 @@ router.get('/', needAuth, function(req, res, next) {
   });
 });
 
-router.get('/search',function(req, res,nest){
+router.get('/search',function(req, res,next){
   console.log(req.query.city);
   Host.find({city: req.query.city}, function(err,result){
     if (err){
@@ -39,7 +39,7 @@ router.get('/new', function(req, res, next) {
 router.post('/', function(req, res,next){
     //console.log(req.body);
     var book = new Book();
-    book.person = req.body.person;
+    book.num_person = req.body.num_person;
     book.check_in = req.body.check_in;
     book.check_out = req.body.check_out;
     book.introduce = req.body.introduce;

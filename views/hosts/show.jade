@@ -6,16 +6,25 @@ block content
     p
       b  by #{host.userName}
       | 
-      span at #{moment(host.createdAt).format('YYYY-MM-DD')} 
+      span at #{moment(host.createdAt).format('YYYY-MM-DD HH:MM:SS')} 
       | 
       | (조회수 #{host.read})
-    p.well(style='white-space:pre;')=  host.title
-    p.well(style='white-space:pre;')= host.city
-    p.well(style='white-space:pre;')= host.address
-    p.well(style='white-space:pre;')= host.content
-    p.well(style='white-space:pre;')= host.facility
-    p.well(style='white-space:pre;')= host.rule
-    p.well(style='white-space:pre;')= host.charge
+
+    ul
+      li 제목 
+      p= host.title
+      li 도시명 
+      p= host.city
+      li 자세한 주소
+      p= host.address
+      li 간단한 설명
+      p= host.content
+      li 이용 시설 
+      p= host.facility
+      li 이용 규칙 
+      p= host.rule
+      li 이용 요금 
+      p= host.charge
 
 
     a.btn.btn-default(href='/hosts') 목록

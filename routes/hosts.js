@@ -12,7 +12,7 @@ function needAuth(req, res, next) {
   }
 }
 
-router.get('/', function(req, res, next) {
+router.get('/', needAuth, function(req, res, next) {
   Host.find({}, function(err, hosts) {
     if (err) {
       return next(err);

@@ -17,9 +17,9 @@
         li
           a(href='/users') 사용자관리
       ul.nav.navbar-nav.navbar-right
-        li 
-          a(hred='/') 예약확인
         if (currentUser) 
+          li 
+            a(href='/requests') 예약확인
           li
             a(href='/users/#{currentUser._id}') 회원정보
           li

@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 숙소 목록
+
+    table.table.table-bordered
+      thead
+        tr 
+          th 도시명
+          th 제목
+          th 요금
+          th 호스트
+          th 조회수
+          th
+      tbody
+        each host in hosts
+          tr
+            td= host.city
+            td
+              a(href='/hosts/#{host.id}')= host.title
+            td= host.charge
+            td #{host.userName}
+            td= host.read
+            td
+              a.btn.btn-xs.btn-default(href='/books/new') 예약
+              //- a.btn.btn-xs.btn-default(href='/requests/#{user._id}?_mothod=GET') 예약
+    
+    a.btn.btn-primary(href='/books') 목록

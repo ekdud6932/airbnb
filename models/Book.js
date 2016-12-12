@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var schema = new Schema({
-    person: {type: Number},
+    num_person: {type: Number},
     check_in: {type: String},
     check_out: {type: String},
     introduce: {type: String},

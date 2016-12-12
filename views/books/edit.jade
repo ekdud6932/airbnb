@@ -7,8 +7,8 @@ block content
 
     form(action = (book.id) ? "/books/#{book.id}?_method=PUT" : "/books", method='POST')
       .form-group
-        label(for='person') 숙박인원 
-        input.form-control(type='person', id='person', name='person', placeholder='숙박인원')
+        label(for='num_person') 숙박인원 
+        input.form-control(type='num_person', id='num_person', name='num_person', placeholder='숙박인원')
       .form-group
         label(for='check_in') 체크인날짜 
         input.form-control(type='check_in', id='check_in', name='check_in', placeholder='예)2016-12-06')
@@ -16,11 +16,11 @@ block content
         label(for='check_out') 체크아웃날짜 
         input.form-control(type='check_out', id='check_out', name='check_out', placeholder='예)2016-12-16')
       .form-group
-        label(for='introduce') 제목
+        label(for='introduce') 간단한 소개
         textarea.form-control(type='introduce', id='introduce', name='introduce', placeholder='간단한 소개')
 
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
         | 
-        button.btn.btn-primary(type='submit') 예약 요청
+        button.btn.btn-primary(href='/books/show') 예약 요청
       

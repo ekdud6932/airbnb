@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 예약 요청 목록
+
+    table.table.table-bordered
+      thead
+        tr 
+          th 제목
+          th 체크인 
+          th 체크아웃
+          th 숙박인원
+          th 요청자
+          th 요청날짜
+          th
+      tbody
+        each request in requests
+          tr
+            td #{request.hostTitle}
+            td= request.check_in
+            td= request.check_out
+            td= request.num_person
+            td #{request.userName}
+            td= moment(request.bookedAt).format('YYYY-MM-DD HH:MM:SS')
+            td
+              a.btn.btn-xs.btn-default 요청 승인
+              a.btn.btn-xs.btn-default 요청 거절

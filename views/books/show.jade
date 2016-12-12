@@ -2,13 +2,21 @@ extends ../layout
 
 block content
   .container
-    h1.page-header= host.title
+    h1.page-header 예약
     p
-      b by #{host.userName}
+      b by #{book.userName}
       | 
-      span at #{moment(host.createdAt).format('YYYY-MM-DD')} 
-      | 
-      | (조회수 #{host.read})
-    p.well(style='white-space:pre;')= host.content
+      span at #{moment(book.createdAt).format('YYYY-MM-DD HH:MM:SS')} 
     
-    a.btn.btn-default(href='/books') 예약
+    ul
+      li 숙박인원
+      p= book.num_person
+      li 체크인 
+      p= book.check_in
+      li 체크아웃
+      p= book.check_out
+      li 간단한 소개
+      p= book.content
+     
+    
+    a.btn.btn-default(href='requests') 예약 요청
