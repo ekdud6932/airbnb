@@ -32,9 +32,11 @@ router.get('/search',function(req, res,next){
   });
 });
 
-router.get('/new', function(req, res, next) {
-    res.render('books/edit', {book : {}});
+router.get('/new:host_id', function(req, res, next) {
+    res.render('books/edit', {book : {}, host_id: req.params.host_id});
 });
+
+
 //db를 만들어서 숙소정보를 저장
 router.post('/', function(req, res,next){
     //console.log(req.body);
@@ -42,8 +44,9 @@ router.post('/', function(req, res,next){
     book.num_person = req.body.num_person;
     book.check_in = req.body.check_in;
     book.check_out = req.body.check_out;
-    book.introduce = req.body.introduce;
     book.bookedAt = req.body.bookedAt;
+    book.user = req.user.id;
+    book.host = req.host.id;
     book.save(function(err, result){
         if(err){
             next(err);

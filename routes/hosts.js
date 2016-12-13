@@ -18,41 +18,6 @@ router.get('/', needAuth, function(req, res, next) {
       return next(err);
     }
     res.render('hosts', {hosts: hosts});
-    
-    // var hostArr = [];
-    // User.find({}, function(err, users){
-    //   if(err){
-    //     return next(err);
-    //   }
-      
-    //   for(var i = 0; i<hosts.length; i++){
-        
-    //     for(var j = 0; j<users.length; j++){
-          
-    //       console.log("host : " + hosts[i].user);
-    //       console.log("user : " + users[j].id);
-    //       console.log(hosts[i].user == users[j].id);
-    //       if(hosts[i].user == users[j].id){
-    //         console.log("찾음");
-    //         var hostTemp = {
-    //           name : users[j].name,
-    //           id : hosts[i].id,
-    //           title : hosts[i].title,
-    //           read : hosts[i].read,
-    //           createdAt : hosts[i].createdAt
-    //         }
-    //         hostArr.push(hostTemp);
-    //         // hosts.userName = users.name;
-            
-    //         // console.log(hosts.userName);
-    //         // break;
-    //       }
-    //     }
-    //   }
-    //   console.log(hostArr);
-    //   res.render('hosts', {hosts: hostArr});
-    // });
-    
   });
 });
 

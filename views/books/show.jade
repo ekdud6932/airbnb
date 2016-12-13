@@ -6,7 +6,7 @@ block content
     p
       b by #{book.userName}
       | 
-      span at #{moment(book.createdAt).format('YYYY-MM-DD HH:MM:SS')} 
+      span at #{moment(book.bookedAt).format('YYYY-MM-DD HH:mm:ss')} 
     
     ul
       li 숙박인원
@@ -15,8 +15,7 @@ block content
       p= book.check_in
       li 체크아웃
       p= book.check_out
-      li 간단한 소개
-      p= book.content
+    
      
     
-    a.btn.btn-default(href='requests') 예약 요청
+    a.btn.btn-default(type='submit',href='requests') 예약 요청

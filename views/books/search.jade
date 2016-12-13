@@ -23,7 +23,7 @@ block content
             td #{host.userName}
             td= host.read
             td
-              a.btn.btn-xs.btn-default(href='/books/new') 예약
+              a.btn.btn-xs.btn-default(href='/books/new' + host.id) 예약
               //- a.btn.btn-xs.btn-default(href='/requests/#{user._id}?_mothod=GET') 예약
     
     a.btn.btn-primary(href='/books') 목록

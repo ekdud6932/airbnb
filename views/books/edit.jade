@@ -16,11 +16,9 @@ block content
         label(for='check_out') 체크아웃날짜 
         input.form-control(type='check_out', id='check_out', name='check_out', placeholder='예)2016-12-16')
       .form-group
-        label(for='introduce') 간단한 소개
-        textarea.form-control(type='introduce', id='introduce', name='introduce', placeholder='간단한 소개')
-
+        input.form-control(type='hidden', name='host_id', value=host_id)
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
         | 
-        button.btn.btn-primary(href='/books/show') 예약 요청
+        button.btn.btn-primary(href='/books/show') 예약 
       

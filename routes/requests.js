@@ -23,13 +23,14 @@ router.get('/', needAuth, function(req, res, next) {
 });
 
 
-
 //db를 만들어서 숙소정보를 저장
 router.post('/', function(req, res,next){
     //console.log(req.body);
     var request = new Request();
-    request.userName = req.user.name;
-    request.hostTitle = req.host.title;
+    // request.userName = req.user.name;
+    // request.hostTitle = req.host.title;
+    request.user = req.user.id;
+    request.host = req.host.id;
     request.save(function(err, result){
         if(err){
             next(err);

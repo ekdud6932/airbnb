@@ -5,10 +5,10 @@ var schema = new Schema({
     num_person: {type: Number},
     check_in: {type: String},
     check_out: {type: String},
-    introduce: {type: String},
     bookedAt: {type: Date, default: Date.now},
     user: {type: Schema.Types.ObjectId, index: true},
-    userName: {type: String}
+    userName: {type: String},
+    host: {type: Schema.Types.ObjectId, index: true}
 }, {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}
